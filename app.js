@@ -128,11 +128,11 @@ const promptProject = portfolioData => {
 promptUser()
   .then(promptProject)
   .then(portfolioData => {
-     return generatePage(portfolioData);
+    return generatePage(portfolioData);
   })
 
   .then(pageHTML => {
-    return fs.writeFile(pageHTML);
+    return writeFile(pageHTML);
   })
 
   .then(writeFileResponse => {
@@ -143,7 +143,7 @@ promptUser()
   .then(copyFileResponse => {
     console.log(copyFileResponse);
   })
-
+  
   .catch(err => {
     console.log(err);
   });
